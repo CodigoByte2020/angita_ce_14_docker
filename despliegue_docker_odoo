@@ -1,0 +1,21 @@
+PASOS PARA EDITAR ESTE PROYECTO Y DESPLEGARLO EN AWS USANDO DOCKER:
+
+editar el archivo .env
+
+WEB_HOST=efs_odoo
+WEB PORT=8080
+
+DB_HOST=efs_db
+DB_USER=user_efs_odoo
+DB_PASSWD=user_efs_odoo
+
+copiar el archivo config/copy.odoo.conf a odoo.conf
+editar el archivo odoo.conf
+
+admin_passwd = 123456*21
+db_host = efs_db
+db_password = user_efs_odoo
+db_user = user_efs_odoo
+
+docker logs -f --tail <number_lines> <container_name>: Para ver los logs de odoo.
+
